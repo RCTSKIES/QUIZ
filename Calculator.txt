@@ -1,0 +1,211 @@
+public static void Main(string[] args)
+        {
+            Single AdRes = 0, SubRes = 0, SubVal = 0, Substractor = 0, MultRes = 1, DivRes = 0, DivVal, Divider;
+            short Choice, NbVal = 0;
+            Single[] tabGrds = new Single[10];
+            string YesNo;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("\tNUMERIC CALCULATOR");
+                Console.WriteLine("\tMain Menu Operators Choice");
+                Console.WriteLine("\t--------------------------");
+                Console.WriteLine();
+                Console.WriteLine("1 - ADDITION");
+                Console.WriteLine("2 - DIVISION");
+                Console.WriteLine("3 - MULTIPLICATION");
+                Console.WriteLine("4 - SUBSTRACTION");
+                Console.WriteLine("5 - QUIT");
+
+                do
+                {
+                    Console.Write("Make your choice (1 - 5) : ");
+                    Choice = Convert.ToInt16(Console.ReadLine());
+                }
+                while (Choice < 1 || Choice > 5);
+
+                switch (Choice)
+                {
+                    case 1:
+                        do
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\tADDITION OPERATION");
+                            Console.WriteLine("\t------------------");
+                            Console.WriteLine();
+
+
+                            Console.Write("Enter the number of values to add : ");
+                            NbVal = Convert.ToInt16(Console.ReadLine());
+                            while (NbVal > 20 || NbVal < 2)
+                            {
+                                Console.Write(" Please, enter a valid nubver of values to be added (2 - 20) : ");
+                                NbVal = Convert.ToInt16(Console.ReadLine());
+                            }
+                            for (Int16 i = 0; i < NbVal; i++)
+                            {
+
+                                Console.Write(" Enter value " + (i + 1) + " : ");
+                                tabGrds[i] = Convert.ToSingle(Console.ReadLine());
+                                AdRes = Convert.ToSingle(AdRes + tabGrds[i]);
+
+                            }
+
+
+                            Console.WriteLine("\t\t---");
+                            Console.WriteLine("The Result is " + "   " + AdRes);
+                            Console.WriteLine();
+
+                            Console.Write("Do you want to do another addition ? (y/n): ");
+                            YesNo = Console.ReadLine();
+                            while ((YesNo == "Y" || YesNo == "y" || YesNo == "N" || YesNo == "n") == false)
+                            {
+                                Console.Write("Please, enter yes or no (y/n) : ");
+                                YesNo = Console.ReadLine();
+                            }
+                            Console.Clear();
+                            AdRes = 0;
+                        }
+                        while (YesNo == "Y" || YesNo == "y");
+                        break;
+
+                    case 2:
+                        do
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\tDIVISION OPERATION");
+                            Console.WriteLine("\t------------------");
+                            Console.WriteLine();
+
+
+                            Console.Write("Enter the value to divide : ");
+                            DivVal = Convert.ToSingle(Console.ReadLine());
+                            while (DivVal == 0)
+                            {
+                                Console.Write(" Please, enter a valid value to divide (Not 0) : ");
+                                DivVal = Convert.ToSingle(Console.ReadLine());
+                            }
+                            do
+                            {
+                                Console.Write("Enter the divider (Not 0) : ");
+                                Divider = Convert.ToSingle(Console.ReadLine());
+                            }
+                            while (Divider == 0);
+                            DivRes = Convert.ToSingle(DivVal / Divider);
+
+
+                            Console.WriteLine("\t\t\t ------");
+                            Console.WriteLine("\t  The Result is " + "    " + DivRes);
+                            Console.WriteLine();
+
+                            Console.Write("Do you want to do another division ? (y/n): ");
+                            YesNo = Console.ReadLine();
+                            while ((YesNo == "Y" || YesNo == "y" || YesNo == "N" || YesNo == "n") == false)
+                            {
+                                Console.Write("Please, enter yes or no (y/n) : ");
+                                YesNo = Console.ReadLine();
+                            }
+                            Console.Clear();
+                        }
+                        while (YesNo == "Y" || YesNo == "y");
+                        break;
+
+                    case 3:
+
+                        do
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\tMULTIPLICATION OPERATION");
+                            Console.WriteLine("\t------------------------");
+                            Console.WriteLine();
+
+
+                            Console.Write("Enter the number of values to multiply : ");
+                            NbVal = Convert.ToInt16(Console.ReadLine());
+
+
+                            while (NbVal > 20 || NbVal < 2)
+                            {
+                                Console.Write(" Please, enter a valid number of values to be multiplied (2 - 20) : ");
+                                NbVal = Convert.ToInt16(Console.ReadLine());
+                            }
+                            for (Int16 i = 0; i < NbVal; i++)
+                            {
+
+                                Console.Write(" Enter value " + (i + 1) + " : ");
+                                tabGrds[i] = Convert.ToSingle(Console.ReadLine());
+                                MultRes = Convert.ToSingle(MultRes * tabGrds[i]);
+
+                            }
+
+
+                            Console.WriteLine("\t\t---");
+                            Console.WriteLine("The Result is " + "  " + MultRes);
+                            Console.WriteLine();
+                            MultRes = 1;
+
+
+                            Console.Write("Do you want to do another multiplication ? (y/n): ");
+                            YesNo = Console.ReadLine();
+                            while ((YesNo == "Y" || YesNo == "y" || YesNo == "N" || YesNo == "n") == false)
+                            {
+                                Console.Write("Please, enter yes or no (y/n) : ");
+                                YesNo = Console.ReadLine();
+                            }
+                            Console.Clear();
+                            
+                        }
+                        while (YesNo == "Y" || YesNo == "y");
+                        break;
+
+                    case 4:
+                        do
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\tSUBSTRACTION OPERATION");
+                            Console.WriteLine("\t------------------");
+                            Console.WriteLine();
+
+
+                            Console.Write("Enter the value to substract : ");
+                            SubVal = Convert.ToSingle(Console.ReadLine());
+                            Console.Write("Enter the substractor        : ");
+                            Substractor = Convert.ToSingle(Console.ReadLine());
+
+
+                            SubRes = Convert.ToSingle(SubVal - Substractor);
+
+
+                            Console.WriteLine("\t\t\t  ------");
+                            Console.Write("The Result is                : " + SubRes);
+                            Console.WriteLine();
+                         
+
+                            Console.Write("Do you want to do another addition ? (y/n): ");
+                            YesNo = Console.ReadLine();
+                            while ((YesNo == "Y" || YesNo == "y" || YesNo == "N" || YesNo == "n") == false)
+                            {
+                                Console.Write("Please, enter yes or no (y/n) : ");
+                                YesNo = Console.ReadLine();
+                            }
+                            Console.Clear();
+                            SubRes = 0;
+                        }
+                        while (YesNo == "Y" || YesNo == "y");
+                        break;
+
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("\tNUMERIC CALCULATOR");
+                        Console.WriteLine("\t------------------");
+                        Console.WriteLine();
+                        Console.WriteLine("Thank you for using the Numeric Calculator v1.0");
+                        Console.WriteLine();
+                        break;
+                }
+            }
+            while (Choice != 5);
+
+        }
+    }
